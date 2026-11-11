@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacy policy for Garmin Sync, a private, single-user export utility.">
+  <title>Privacy Policy — Garmin Sync</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
+    body { margin: 0; background: #f7f8fa; color: #17202d; }
+    main { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    h1 { font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -.035em; line-height: 1.15; }
+    h2 { font-size: 1.2rem; margin-top: 32px; }
+    a { color: #1954a7; }
+    footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #dce1e9; font-size: .9rem; color: #5c6879; }
+    @media(prefers-color-scheme:dark) { body{background:#0e1218;color:#e4e8ef} a{color:#8bb7ff} footer{color:#a3b2c6;border-color:#344052} }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="index.html">← Garmin Sync</a></p>
+    <h1>Privacy Policy</h1>
+    <p><strong>Last updated:</strong> 11 November 2026</p>
+    <p>Garmin Sync is a personal, single-user utility operated by its owner. This policy describes how the utility uses Google Drive and Garmin fitness data. This website is a public description of the utility, not a hosted service.</p>
+    <h2>Data accessed</h2>
+    <p>The utility retrieves Garmin activity and wellness information authorized by its owner. Depending on enabled exports, this can include activity names, types, dates, performance metrics, GPS routes, sleep measurements, heart-rate metrics and other wellness readings.</p>
+    <p>The utility uses the Google Drive API to create, update and read application-authorized export files in the owner's dedicated Drive account. Google authorization uses the <code>drive.file</code> scope. It does not request general access to all Google Drive content.</p>
+    <h2>Purpose and storage</h2>
+    <p>Data is processed locally on the owner's Mac or Android phone to prepare JSON exports, then uploaded to the owner's dedicated Google Drive account for backup and analysis. The owner determines which measurements are exported and how long the files remain stored.</p>
+    <p>Credentials and private local state remain on the owner's device and are excluded from exports. The Android app uses Android Keystore-backed encryption for the Garmin API key and filename key, and Google authorization for the selected Drive owner account. The Android app embeds no Google server credentials. App-private data is excluded from ordinary Android backups; encrypted migration bundles and recovery copies must be kept private.</p>
+    <h2>Sharing</h2>
+    <p>No Garmin data is published on this website or sold. Export files are stored with Google Drive, which processes them under its applicable terms and privacy policies. If the owner separately authorizes an AI assistant, such as ChatGPT, to read the dedicated Drive account, the assistant's provider may process the selected data to answer the owner's requests under its applicable terms and settings.</p>
+    <h2>Retention and deletion</h2>
+    <p>Data remains in local files and the owner's Google Drive until the owner deletes it. The owner can revoke the Google OAuth authorization in Google Account settings and remove the local configuration and export files. Revocation does not automatically delete files already uploaded to Drive.</p>
+    <h2>Security</h2>
+    <p>This utility is intended for personal use only. The owner controls the Garmin credentials, Google API configuration, devices, and Google Drive storage. GPS tracks can disclose sensitive locations even if numeric account identifiers are removed.</p>
+    <h2>Website visitors</h2>
+    <p>This static GitHub Pages website does not operate an account system, submit forms, or intentionally set tracking cookies. GitHub may process standard hosting and security logs under its own policies.</p>
+    <h2>Changes</h2>
+    <p>This policy may be updated if the utility's data handling changes. The updated version will appear at this URL.</p>
+    <footer><a href="index.html">Garmin Sync home</a> · Independent personal project, not affiliated with Garmin, Google or OpenAI.</footer>
+  </main>
+</body>
+</html>
