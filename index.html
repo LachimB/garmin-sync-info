@@ -3,39 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="A private, single-user Garmin activity and wellness data export utility.">
-  <title>Garmin Sync — Personal data export utility</title>
-  <style>
-    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
-    body { margin: 0; background: #f7f8fa; color: #17202d; }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 72px 24px 100px; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .13em; font-weight: 700; color: #54637e; font-size: .8rem; }
-    h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); letter-spacing: -.04em; line-height: 1.1; margin: 12px 0 24px; }
-    p, li { max-width: 65ch; }
-    .card { background: #fff; border: 1px solid #e0e4eb; border-radius: 16px; padding: 24px 28px; margin: 30px 0; }
-    h2 { font-size: 1.15rem; margin-top: 0; }
-    a { color: #1954a7; }
-    footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #dce1e9; font-size: .9rem; color: #5c6879; }
-    @media(prefers-color-scheme:dark) { body{background:#0e1218;color:#e4e8ef} .card{background:#1a202b;border-color:#344052} .eyebrow,footer{color:#a3b2c6} a{color:#8bb7ff} footer{border-color:#344052} }
-  </style>
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#12347C">
+  <meta name="description" content="A private Android utility for exporting Garmin activities and wellness data to the owner's Google Drive.">
+  <title>Garmin Sync — Personal Android export utility</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="wrap">
-    <div class="eyebrow">Personal utility · Single user</div>
-    <h1>Garmin Sync</h1>
-    <p>Garmin Sync is a personal, locally operated tool for exporting fitness and wellness measurements from Garmin Connect and backing up selected JSON files to a dedicated Google Drive account.</p>
-    <div class="card">
-      <h2>What this tool does</h2>
-      <p>The tool runs locally on the owner's Mac or Android phone. Only one device publishes exports at a time. It retrieves Garmin measurements, prepares local exports, and uses Google Drive API authorization to upload those exports to the owner's Google Drive account.</p>
-      <p>The requested Google Drive permission is limited to files created or opened for this application (<code>drive.file</code>). The tool is not intended for other users.</p>
-    </div>
-    <div class="card">
-      <h2>What this website does not do</h2>
-      <p>This public website is informational only. It does not accept logins, collect Garmin or Google credentials, display workout routes, or host any private activity or health records.</p>
-    </div>
-    <p>Read the <a href="privacy.html">Privacy Policy</a> to learn how the utility handles data and permissions.</p>
-    <footer>Independent personal project. Not affiliated with or endorsed by Garmin, Google or OpenAI. · <a href="privacy.html">Privacy Policy</a></footer>
-  </main>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap">
+    <header class="hero">
+      <div class="topline"><a class="brand" href="index.html">Garmin Sync</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="privacy.html">Privacy</a></nav></div>
+      <p class="eyebrow">Android · Personal use</p>
+      <h1>Your Garmin data.<br>Your own exports.</h1>
+      <p class="lead">A private, single-user Android utility that collects Garmin Connect activities and wellness data, prepares local exports and publishes them to the owner's Google Drive.</p>
+    </header>
+    <main id="content" class="grid">
+      <section class="card wide">
+        <p class="step">01 / Collect</p>
+        <h2>Activities and daily wellness</h2>
+        <p>Collect recent activities, retrieve older activities and refresh daily wellness records, including sleep, heart-rate variability, Body Battery and stress. Optional GPS routes can be included in activity archives.</p>
+      </section>
+      <section class="card">
+        <p class="step">02 / Export</p>
+        <h2>Files you can use</h2>
+        <p>Individual activity JSON files, a configurable latest-activity index, daily health JSON files, full or date-range activity archives, and PDF publication histories.</p>
+        <p>Weekly archives can include or omit GPS routes. Manual controls support collection, archive creation and publishing queued files.</p>
+      </section>
+      <section class="card">
+        <p class="step">03 / Stay in control</p>
+        <h2>Sync on your terms</h2>
+        <p>Configure schedules and choose Wi-Fi only or Wi-Fi and mobile data. Pause Drive publishing, inspect pending work and failed checks, and repair access when needed.</p>
+        <p>Android background scheduling is best effort. Device restrictions, connectivity and revoked access can delay work.</p>
+      </section>
+      <section class="card">
+        <h2>Limited Google Drive access</h2>
+        <p>Google authorization uses <code>drive.file</code> for files created or explicitly opened for the app. The app checks the authorized account and saved destination before publishing.</p>
+        <p>Exports stay in the owner's Drive. This website does not host private records or offer a public app download.</p>
+      </section>
+      <section class="card">
+        <h2>Private backup and recovery</h2>
+        <p>Save and verify passphrase-encrypted recovery backups for an empty replacement installation. Credentials are provisioned separately, and restored publishing remains paused until the saved account and destination are verified.</p>
+      </section>
+      <section class="card wide">
+        <h2>Understand what leaves your phone</h2>
+        <p>The app filters identifying fields from exported JSON, but health measurements, activity names, timestamps and GPS routes can still be sensitive. Keep exports and recovery backups private.</p>
+        <a class="button" href="privacy.html">Read the Privacy Policy <span aria-hidden="true">&nbsp;→</span></a>
+      </section>
+    </main>
+    <footer class="footer"><p>Independent personal project.<br>Not affiliated with or endorsed by Garmin or Google.</p><p><a href="index.html">Overview</a> · <a href="privacy.html">Privacy Policy</a></p></footer>
+  </div>
 </body>
 </html>

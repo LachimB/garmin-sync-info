@@ -3,43 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Privacy policy for Garmin Sync, a private, single-user export utility.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#12347C">
+  <meta name="description" content="How the private Garmin Sync Android utility handles Garmin data, Google Drive access and encrypted recovery backups.">
   <title>Privacy Policy — Garmin Sync</title>
-  <style>
-    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
-    body { margin: 0; background: #f7f8fa; color: #17202d; }
-    main { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
-    h1 { font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -.035em; line-height: 1.15; }
-    h2 { font-size: 1.2rem; margin-top: 32px; }
-    a { color: #1954a7; }
-    footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #dce1e9; font-size: .9rem; color: #5c6879; }
-    @media(prefers-color-scheme:dark) { body{background:#0e1218;color:#e4e8ef} a{color:#8bb7ff} footer{color:#a3b2c6;border-color:#344052} }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <p><a href="index.html">← Garmin Sync</a></p>
-    <h1>Privacy Policy</h1>
-    <p><strong>Last updated:</strong> 11 November 2026</p>
-    <p>Garmin Sync is a personal, single-user utility operated by its owner. This policy describes how the utility uses Google Drive and Garmin fitness data. This website is a public description of the utility, not a hosted service.</p>
-    <h2>Data accessed</h2>
-    <p>The utility retrieves Garmin activity and wellness information authorized by its owner. Depending on enabled exports, this can include activity names, types, dates, performance metrics, GPS routes, sleep measurements, heart-rate metrics and other wellness readings.</p>
-    <p>The utility uses the Google Drive API to create, update and read application-authorized export files in the owner's dedicated Drive account. Google authorization uses the <code>drive.file</code> scope. It does not request general access to all Google Drive content.</p>
-    <h2>Purpose and storage</h2>
-    <p>Data is processed locally on the owner's Mac or Android phone to prepare JSON exports, then uploaded to the owner's dedicated Google Drive account for backup and analysis. The owner determines which measurements are exported and how long the files remain stored.</p>
-    <p>Credentials and private local state remain on the owner's device and are excluded from exports. The Android app uses Android Keystore-backed encryption for the Garmin API key and filename key, and Google authorization for the selected Drive owner account. The Android app embeds no Google server credentials. App-private data is excluded from ordinary Android backups; encrypted migration bundles and recovery copies must be kept private.</p>
-    <h2>Sharing</h2>
-    <p>No Garmin data is published on this website or sold. Export files are stored with Google Drive, which processes them under its applicable terms and privacy policies. If the owner separately authorizes an AI assistant, such as ChatGPT, to read the dedicated Drive account, the assistant's provider may process the selected data to answer the owner's requests under its applicable terms and settings.</p>
-    <h2>Retention and deletion</h2>
-    <p>Data remains in local files and the owner's Google Drive until the owner deletes it. The owner can revoke the Google OAuth authorization in Google Account settings and remove the local configuration and export files. Revocation does not automatically delete files already uploaded to Drive.</p>
-    <h2>Security</h2>
-    <p>This utility is intended for personal use only. The owner controls the Garmin credentials, Google API configuration, devices, and Google Drive storage. GPS tracks can disclose sensitive locations even if numeric account identifiers are removed.</p>
-    <h2>Website visitors</h2>
-    <p>This static GitHub Pages website does not operate an account system, submit forms, or intentionally set tracking cookies. GitHub may process standard hosting and security logs under its own policies.</p>
-    <h2>Changes</h2>
-    <p>This policy may be updated if the utility's data handling changes. The updated version will appear at this URL.</p>
-    <footer><a href="index.html">Garmin Sync home</a> · Independent personal project, not affiliated with Garmin, Google or OpenAI.</footer>
-  </main>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap policy">
+    <header class="hero">
+      <div class="topline"><a class="brand" href="index.html">Garmin Sync</a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="privacy.html" aria-current="page">Privacy</a></nav></div>
+      <p class="eyebrow">Data and permissions</p>
+      <h1>Privacy Policy</h1>
+      <p class="lead">Garmin Sync is a personal, single-user Android utility. Data is processed on the owner's phone and exported to the owner's Google Drive.</p>
+      <p class="date">Last updated: <time datetime="2026-11-12">12 November 2026</time></p>
+    </header>
+    <main id="content">
+      <section class="card">
+        <h2>Data accessed</h2>
+        <p>The app retrieves Garmin Connect activity and wellness information authorized by its owner. Depending on the task and settings, this includes activity names, types, dates, performance metrics, workout details, GPS routes, sleep, heart-rate metrics, heart-rate variability, Body Battery and stress.</p>
+        <p>Google Drive access uses the <code>drive.file</code> scope, limited to files created or explicitly opened for this app. The app reads the signed-in account's email address and authorized file and folder metadata to verify the saved owner, destination and access. It does not request general access to all Drive content.</p>
+      </section>
+      <section class="card">
+        <h2>Purpose and storage</h2>
+        <p>The app stores records, caches, settings, pending exports and run history in app-private phone storage. It prepares activity and daily health JSON exports, activity archives and PDF publication histories, then uploads them to the saved Google Drive destination for the owner's use.</p>
+        <p>Scheduled and manual sync follow the selected Wi-Fi-only or Wi-Fi-and-mobile-data preference. Pausing publishing stops Drive publication; it does not delete local records or existing Drive files.</p>
+        <p>The app filters identifying JSON fields before export. This does not make the remaining data anonymous: activity names, dates, health metrics and GPS tracks may reveal personal details or sensitive locations.</p>
+      </section>
+      <section class="card">
+        <h2>Credentials and recovery</h2>
+        <p>The Garmin API key and filename key use Android Keystore-backed encryption on the phone. Google access is authorized through Google services. Credentials are excluded from exported records and recovery backups.</p>
+        <p>App-private data is excluded from ordinary Android system backups. The owner can explicitly save and verify a passphrase-encrypted recovery backup at a chosen location. It contains private records, routes, settings and recovery state, so both the file and its passphrase require protection and should be kept separately.</p>
+        <p>Recovery requires an empty installation. Credentials are provisioned separately; publishing remains paused until the saved account and destination are verified.</p>
+      </section>
+      <section class="card">
+        <h2>Sharing and third parties</h2>
+        <p>The utility communicates with Garmin to retrieve authorized data and with Google to authorize access and store exports in Drive. Those providers process data under their applicable terms and privacy policies.</p>
+        <p>The utility does not sell Garmin data or publish it on this website. Any additional sharing of Drive files or recovery backups is controlled separately by the owner and the chosen services. Drive permissions and copies shared elsewhere must be managed separately.</p>
+      </section>
+      <section class="card">
+        <h2>Retention, access and deletion</h2>
+        <p>Local data and uploaded exports remain until removed by the owner. Google access can be revoked in Google Account settings. Revocation stops future authorized access but does not delete files already uploaded.</p>
+        <p>Clearing app storage or uninstalling removes local app data and can destroy pending work; it does not remove Drive exports or separately saved recovery backups. To remove those copies, delete them from their respective storage locations and manage any retained trash or shared copies there.</p>
+      </section>
+      <section class="card">
+        <h2>This website</h2>
+        <p>These static GitHub Pages are informational only. They provide no login, forms, analytics scripts or tracking cookies, and do not collect Garmin or Google credentials or host private records. GitHub may process standard hosting and security logs under its own policies.</p>
+      </section>
+      <section class="card">
+        <h2>Policy updates</h2>
+        <p>This policy is updated when the app's data handling changes. The current version remains available at this URL.</p>
+        <a class="button" href="index.html"><span aria-hidden="true">←&nbsp;</span> Garmin Sync overview</a>
+      </section>
+    </main>
+    <footer class="footer"><p>Independent personal project.<br>Not affiliated with or endorsed by Garmin or Google.</p><p><a href="index.html">Overview</a> · <a href="privacy.html">Privacy Policy</a></p></footer>
+  </div>
 </body>
 </html>
